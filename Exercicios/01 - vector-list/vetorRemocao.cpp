@@ -12,7 +12,6 @@ void showVector(vector<int> &vet, int sword) {
             cout << vet[i];
     }  
 }
-
 void dead(vector<int> &vet, int sword) {
     vet.erase(vet.begin()+sword);
 }
