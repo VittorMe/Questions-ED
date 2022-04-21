@@ -3,15 +3,14 @@
 #include <numeric>
 using namespace std;
 
-void showList(list<int>  list, int sword){
-    for(auto item: list){
-        if(item == sword)
-            cout<< item<< ">";
-        else
-            cout<< item;
-    }
+void showList(list<int>  list, list<int>::iterator &sword){
+    for (auto it = list.begin(); it!= < list.end(); it++)    
+       cout<< *it << (it== );
+}
+    
     
 }
+
 
 int main(){
     int size { };
@@ -25,9 +24,14 @@ int main(){
     chosen -= 1;
     auto sword = next(list.begin(), chosen);
 
+    auto fix_loop= [&list] (auto it){
+        return it== list.end() ? list.begin(): it;
+    };
+
     while(list.size() > 1){
         showList(list, *sword);
-        
+        sword =fix_loop(next(sword,1));
+        sword =fix_loop(next(sword));
     }
 
     return 0 ;
