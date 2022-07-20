@@ -46,7 +46,7 @@ int main(){
     cin>>tam>>pos;
     --pos;
     if(pos <0 || pos >= tam){
-        exit(1);
+        abort();
     }
 
     list<int> list;
@@ -57,5 +57,5 @@ int main(){
    
         show(list,pos);
         sobrevivente(list,pos);
-    
+    return 0;
 }
